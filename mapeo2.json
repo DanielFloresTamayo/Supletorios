@@ -1,0 +1,45 @@
+{
+  
+    "mappings": {
+      "doc": {
+        "properties": {
+          "@timestamp": {
+            "type": "date"
+          },
+          
+          "coordinates":{  
+               "properties":{  
+                  "coordinates":{  
+                     "type":"geo_point"
+                  },
+                  "type":{  
+                     "type":"text"
+                  }
+               }
+          },
+            
+          "user": {
+            "properties": {
+              "contributors_enabled": {
+                "type": "boolean"
+              },
+              "created_at": {
+                "type": "date",
+                "format": "EE MMM d HH:mm:ss Z yyyy||dd/MM/yyyy||dd-MM-yyyy||date_optional_time",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+            
+            "favourites_count": {"type":"integer"},                
+            "id":{"type":"integer"}
+                
+        }
+        }
+        }
+}
+}
+}
